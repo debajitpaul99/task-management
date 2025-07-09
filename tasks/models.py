@@ -13,7 +13,7 @@ class Task(models.Model):
         ("COMPLETED", "Completed")
     )
     assigned_to = models.ManyToManyField(Employee)
-    project = models.ForeignKey("Project",on_delete=models.CASCADE,default = 1,related_name='project_name')
+    project = models.ForeignKey("Project",on_delete=models.CASCADE,default = 1)
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default="PENDING")
     title = models.CharField(max_length=200)
     description = models.TextField()
